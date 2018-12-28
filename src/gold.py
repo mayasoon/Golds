@@ -18,5 +18,11 @@ def build_table(state, action):
     )
     return table
 
-print(build_table(n_states, actions))
+# print(build_table(n_states, actions))
+# 在某个位置的行为动作的选择的方法
+def choose_action(state,q_table):
+    print('')
+
+if __name__ == '__main__':
+    build_table(n_states, actions)
 
