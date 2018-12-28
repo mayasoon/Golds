@@ -16,13 +16,19 @@ def build_table(state, action):
         numpy.zeros((state, len(action))),# numpy 初始化数据全为零，6 行 两列
         columns=actions # 列的名称
     )
+
     return table
 
 # print(build_table(n_states, actions))
 # 在某个位置的行为动作的选择的方法
 def choose_action(state,q_table):
-    print('')
+    state_actions = q_table.iloc[state,:] # 获取state行所有的值
+    if (numpy.random.uniform() > epsilon) or (state_actions.all() == 0): # 非贪婪 或者初始探索时随机取一个值
+        action_name = numpy.random.choice(actions)
+    else:
+        action_name = state_actions.argmax() # 贪婪模式
+    return action_name
 
 if __name__ == '__main__':
-    build_table(n_states, actions)
-
+    name = choose_action(1,build_table(n_states,actions))
+    print(name)
