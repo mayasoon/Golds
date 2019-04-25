@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot
 
-data_file = open("C:/Users/admin/Desktop/mnist_test_10.csv","r")
+data_file = open("C:/Users/maya/Desktop/mnist_test_10.csv","r")
 data_list = data_file.readlines()
 data_file.close()
 
