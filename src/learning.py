@@ -15,7 +15,7 @@ class NeuralNetWork:
         self.activation_function = lambda x: sp.expit(x)
 
         pass
-
+    # 反向传播更改权重值
     def train(self):
 
         pass
