@@ -16,10 +16,29 @@ class NeuralNetWork:
 
         pass
     # 反向传播更改权重值
-    def train(self):
+    def train(self,input_list,target_list):
+        # 把目标数组变成所需的格式的矩阵 竖着的数组
+        inputs = np.array(input_list,ndmin=2).T
+        targets = np.array(target_list,ndmin=2).T
+        hidden_inputs = np.dot(self.wih,inputs)
+        # 隐藏层的输出值
+        hidden_outputs = self.activation_function(hidden_inputs)
+        final_inputs = np.dot(self.who,hidden_outputs)
+        # 最终输出值
+        final_output = self.activation_function(final_inputs)
+
+        # 计算目标值于实际输出值之间的误差
+        output_errors = targets - final_output
+        # 隐藏层的误差值矩阵
+        hidden_errors = np.dot(self.who.T,output_errors)
+        # 更新输出层和隐藏层的权重transpose 和T有区别？在就一列或者一行的情况下
+        # 先计算出斜率也就是导数值 为 最终层的误差 * 最终层的输出值 * （1 - 最终层输出值）* 上一层的在这里也就是隐藏层的值
+        self.who += self.lr * np.dot((output_errors * final_output * (1-final_output)),np.transpose(hidden_outputs))
+        # 跟新输入层和隐层中间层的权重
+        self.wih += self.lr * np.dot((hidden_errors * hidden_outputs * (1-hidden_outputs)),np.transpose(inputs))
 
         pass
-    # 计算整个网络得到的实际输出值
+    # 计算整个网络得到的实际输出值，作为检查训练结果的方法
     def query(self,input_list):
         # 首先把输入的一维数组转换为 2 维数组 在取逆变为竖着的矩阵
         inputs = np.array(input_list,ndmin=2).T
@@ -33,10 +52,4 @@ class NeuralNetWork:
         return final_output
 
 if __name__ == '__main__':
-    input_nodes = 3
-    hidden_nodes = 3
-    output_nodes = 3
-    learning_rate = 0.3
-
-    neural = NeuralNetWork(input_nodes,hidden_nodes,output_nodes,learning_rate)
-    print(neural.query([1.0,0.5,-1.5]))
+    pass
