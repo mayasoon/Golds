@@ -7,14 +7,20 @@ import tensorflow as tf
 # py.show()
 # a = np.random.rand(3,3)-0.5
 # a = tf.zeros([10])
-ma1 = tf.constant([[3,3]])
-ma2 = tf.constant([[2],
-                   [2]])
-product = tf.matmul(ma1,ma2)
+# ma1 = tf.constant([[3,3]])
+# ma2 = tf.constant([[2],
+#                    [2]])
+# product = tf.matmul(ma1,ma2)
 # sess = tf.Session()
 # result = sess.run(product)
 # print(result)
 # sess.close()
-with tf.Session() as sess:
-    result = sess.run(product)
-    print(result)
+# with tf.Session() as sess:
+#     result = sess.run(product)
+#     print(result)
+X = np.linspace(-1, 1, 20)
+
+np.random.shuffle(X)
+print(X)
+
+print(X[len(X)-5:])

@@ -1,6 +1,6 @@
 import numpy as np
 import scipy.special as sp
-
+# python 实现简单的图片识别神经网络
 class NeuralNetWork:
     def __init__(self,inputnodes,hiddennodes,outputnodes,learningrate):
         self.innodes = inputnodes
