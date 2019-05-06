@@ -1,6 +1,7 @@
 import numpy as np
 from keras.models import Sequential
-from keras.layers.core import Dense ,Activation,Flatten
+from keras.layers.core import Dense,Activation,Flatten
+
 import matplotlib.pyplot as plt
 
 X = np.linspace(-1,1,300)

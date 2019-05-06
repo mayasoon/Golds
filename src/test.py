@@ -18,9 +18,12 @@ import tensorflow as tf
 # with tf.Session() as sess:
 #     result = sess.run(product)
 #     print(result)
-X = np.linspace(-1, 1, 20)
-
-np.random.shuffle(X)
-print(X)
-
-print(X[len(X)-5:])
+# X = np.linspace(-1, 1, 20)
+#
+# np.random.shuffle(X)
+# print(X)
+#
+# print(X[len(X)-5:])
+y_train = np.zeros(shape=(1,10))
+y_train[0,1] = 9
+print(y_train)
