@@ -5,7 +5,7 @@ from keras.models import Sequential
 from keras.layers import Dense,Activation
 from keras.optimizers import RMSprop
 # 训练数据
-train_file = open("C:/Users/maya/Desktop/mnist_train_100.csv","r")
+train_file = open("C:/Users/admin/Desktop/mnist_train_100.csv","r")
 train_list = train_file.readlines()
 train_file.close()
 train_data = np.asfarray(train_list[0].split(",")[1:]).reshape(1,784)/255
@@ -26,7 +26,7 @@ for i in range(len(train_list)):
 
 # print('y_train = ',y_train)
 # 测试数据
-test_file = open("C:/Users/maya/Desktop/mnist_test_10.csv","r")
+test_file = open("C:/Users/admin/Desktop/mnist_test_10.csv","r")
 test_list = test_file.readlines()
 test_file.close()
 test_data = np.asfarray(train_list[0].split(",")[1:]).reshape(1,784)/255

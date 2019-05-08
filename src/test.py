@@ -2,8 +2,8 @@ import matplotlib.pyplot as py
 import numpy as np
 import tensorflow as tf
 import base64
-import cv2
 import matplotlib.pyplot as plt
+
 # a = np.array([[1],[2],[3],[4]])
 # py.imshow(a,interpolation="nearest")
 # py.show()
@@ -35,7 +35,3 @@ import matplotlib.pyplot as plt
 # print(img.size)
 # print(img.dtype)
 # print(img)
-
-image = plt.imread('C:/Users/maya/Desktop/timg.png',0)
-plt.imshow(image,cmap="Greys",interpolation="None")
-plt.show()
